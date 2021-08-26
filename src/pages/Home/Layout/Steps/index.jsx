@@ -1,9 +1,9 @@
 import { StepsWrapper, StepsContainer, Step } from './style.jsx';
-import React, { useState } from 'react';
+import React /* , { useState } */ from 'react';
 import StepIcon from './elements/StepIcon.jsx';
 
 export default function Steps() {
-	const [currentStep, setStep] = useState(0);
+	/* const [currentStep, setStep] = useState(0); */
 
 	return (
 		<StepsWrapper>
