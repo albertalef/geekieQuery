@@ -1,5 +1,4 @@
 import React from 'react';
-import ButtonGroup from './components/ButtonGroup';
 import InputLink from './components/InputLink';
 import TutorialSteps from './components/TutorialSteps';
 import Welcome from './components/Welcome.jsx';
@@ -12,7 +11,6 @@ export default function Tutorial() {
 				<Welcome />
 				<InputLink />
 				<TutorialSteps />
-				<ButtonGroup />
 			</Container>
 		</TutorialWrapper>
 	);

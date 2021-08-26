@@ -8,7 +8,7 @@ export const TutorialWrapper = styled.div`
 `;
 export const Container = styled.div`
 	/* background-color: #ff000014; */
-	width: 80%;
+	width: 100%;
 	height: 95%;
 	display: flex;
 	flex-direction: column;

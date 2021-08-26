@@ -1,11 +1,17 @@
 import styled from 'styled-components';
 
-export const List = styled.div`
+export const List = styled.ul`
 	width: 100%;
 	height: 70%;
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
+	@media (max-width: 1220px) {
+		overflow-y: scroll;
+	}
+	p {
+		margin-bottom: 20px;
+	}
 `;
 export const Link = styled.a`
 	text-decoration: none;
@@ -16,6 +22,7 @@ export const Link = styled.a`
 	text-align: center;
 	align-items: center;
 	color: #2696e8;
+
 	p {
 		font-family: Montserrat;
 		font-style: normal;

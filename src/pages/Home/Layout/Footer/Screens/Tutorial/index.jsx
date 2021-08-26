@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import React from 'react';
 
-export default function ButtonGroup() {
+export default function TutorialButtonGroup() {
 	return (
 		<ButtonGroupWrapper>
 			<Skip>Pular</Skip>
@@ -13,8 +13,9 @@ export default function ButtonGroup() {
 	);
 }
 export const ButtonGroupWrapper = styled.div`
-	width: 100%;
-	height: 10%;
+	width: 80%;
+	max-width: 1000px;
+	height: 100%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;

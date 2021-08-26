@@ -1,3 +1,19 @@
+const variables = {
+	header: {
+		height: '80px',
+	},
+	footer: {
+		height: '60px',
+	},
+	stepsSide: {
+		width: '500px',
+	},
+	context: {
+		width: '80%',
+		maxWidth: '1000px',
+	},
+};
+
 const lightTheme = {
 	title: {
 		color: '#0f2b47',
@@ -10,6 +26,7 @@ const lightTheme = {
 
 	primaryColor: '#35a0ee',
 	secondaryColor: '#fff',
+	variables,
 };
 
 export default lightTheme;
