@@ -1,0 +1,104 @@
+import React from 'react';
+import styled from 'styled-components';
+import Text from '../../../../Components/Text';
+import Title from '../../../../Components/Title';
+import Solution from './Solution';
+
+export default function SolutionCard({ data, index }) {
+	const { content, choices, wording } = data;
+	return (
+		<Wrapper>
+			<Header>
+				<HeaderTitle>Questão {index + 1}</HeaderTitle>
+			</Header>
+			<Container>
+				<QuestionArea>
+					<Question dangerouslySetInnerHTML={{ __html: content }} />
+					<Wording dangerouslySetInnerHTML={{ __html: wording }} />
+				</QuestionArea>
+				<SolutionArea>
+					{choices.map((choice, index) => (
+						<Solution
+							key={index}
+							isCorrect={choice.isCorrect}
+							text={choice.content}
+						/>
+					))}
+				</SolutionArea>
+			</Container>
+		</Wrapper>
+	);
+}
+const Wrapper = styled.div`
+	box-shadow: 0px 0px 40px rgba(15, 48, 71, 0.24);
+	width: 100%;
+	height: 100%;
+	border-radius: 8px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	flex: none;
+	z-index: 5;
+	background-color: white;
+`;
+
+const Container = styled.div`
+	/* background-color: red; */
+	width: 90%;
+	height: 85%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+`;
+
+const Header = styled.div`
+	width: 100%;
+	height: 10vh;
+	background-color: #39a2ecb0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+`;
+const HeaderTitle = styled(Title)`
+	font-family: ${({ theme }) => theme.title.fontFamily};
+`;
+
+const QuestionArea = styled.div`
+	margin-top: 2.5%;
+	width: 100%;
+	height: 48%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+`;
+
+const Question = styled(Text)`
+	width: 100%;
+	height: 80%;
+	overflow: hidden;
+	overflow-y: auto;
+	padding-left: 10px;
+
+	p {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+`;
+const Wording = styled(Text)`
+	color: #5f6b72;
+	width: 100%;
+	height: 18%;
+	font-weight: 600;
+	padding-left: 10px;
+	overflow: hidden;
+`;
+const SolutionArea = styled.div`
+	width: 100%;
+	height: 45%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+`;
