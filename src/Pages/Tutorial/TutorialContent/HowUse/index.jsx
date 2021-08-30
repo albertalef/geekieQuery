@@ -30,10 +30,10 @@ export default function TutorialSteps() {
 				</Text>
 			</List>
 
-			<Link href="https://www.youtube.com/watch?v=CC8pt2KcaLw" target="_blank">
+			{/* <Link href="https://www.youtube.com/watch?v=CC8pt2KcaLw" target="_blank">
 				<p>Tutorial com vídeo</p>
 				<i className="fas fa-long-arrow-alt-right"></i>
-			</Link>
+			</Link> */}
 		</TutorialStepsWrapper>
 	);
 }
