@@ -53,6 +53,7 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
 	/* background-color: red; */
+	position: relative;
 	width: 90%;
 	height: 85%;
 	display: flex;
@@ -108,8 +109,12 @@ const Wording = styled(Text)`
 	line-height: 19px;
 `;
 const SolutionArea = styled.div`
+	background-color: ${({ theme }) => theme.secondaryColor};
+	position: absolute;
+	bottom: 0;
 	width: 100%;
 	height: 45%;
+	min-height: 200px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;

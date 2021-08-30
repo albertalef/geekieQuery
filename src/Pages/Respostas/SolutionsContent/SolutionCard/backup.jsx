@@ -13,12 +13,10 @@ export default function SolutionCard({ data, index }) {
 			</Header>
 			<Container>
 				<QuestionArea>
-					<QuestionContentContainer>
-						<Content dangerouslySetInnerHTML={{ __html: content }}></Content>
-					</QuestionContentContainer>
-					<Wording dangerouslySetInnerHTML={{ __html: wording }}></Wording>
+					<Question dangerouslySetInnerHTML={{ __html: content }} />
+					<Wording dangerouslySetInnerHTML={{ __html: wording }} />
 				</QuestionArea>
-				<SolutionContainer>
+				<SolutionArea>
 					{choices.map((choice, index) => (
 						<Solution
 							key={index}
@@ -26,82 +24,93 @@ export default function SolutionCard({ data, index }) {
 							text={choice.content}
 						/>
 					))}
-				</SolutionContainer>
+				</SolutionArea>
 			</Container>
 		</Wrapper>
 	);
 }
-
 const Wrapper = styled.div`
-	position: relative;
-	background-color: #ffffff;
-	box-shadow: 0px 0px 40px rgba(15, 48, 71, 0.24);
-	border-radius: 11px;
-	height: 100%;
+	box-shadow: 0px 0px 40px #7090a87f;
 	width: 100%;
-	margin-bottom: 50px;
+	height: 100%;
+	border-radius: 5px;
 	overflow: hidden;
 	display: flex;
-	justify-content: space-between;
 	flex-direction: column;
+	justify-content: flex-start;
 	align-items: center;
+	flex: none;
+	z-index: 5;
+	background-color: white;
+	* {
+		user-select: none;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-khtml-user-select: none;
+		-ms-user-select: none;
+	}
 `;
+
+const Container = styled.div`
+	/* background-color: red; */
+	width: 90%;
+	height: 85%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+`;
+
 const Header = styled.div`
 	width: 100%;
-	height: 10%;
-	background-color: #39a2ecb0;
+	height: 10vh;
+	background-color: ${({ theme }) => theme.solutionCard.header.backgroundColor};
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	border-bottom: 2px solid
+		${({ theme }) => theme.solutionCard.header.bottomColor};
+	border-radius: 6px 6px 0 0;
 `;
 const HeaderTitle = styled(Title)`
-	font-family: ${({ theme }) => theme.title.fontFamily};
+	font-family: ${({ theme }) => theme.text.fontFamily};
+	font-weight: 700;
 `;
-const Container = styled.div`
-	background-color: #ff00002b;
-	width: 80%;
-	height: 100%;
-	display: flex;
-	flex-grow: 1;
-	flex-direction: column;
-	justify-content: space-between;
-`;
+
 const QuestionArea = styled.div`
-	background-color: red;
-	height: 45%;
+	margin-top: 2.5%;
+	width: 100%;
+	height: 48%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 `;
-const QuestionContentContainer = styled.div`
-	margin-top: 2%;
 
-	/* background-color: #96000052; */
-
+const Question = styled(Text)`
+	width: 100%;
 	height: 80%;
-	display: flex;
-	align-items: center;
-`;
-const Content = styled(Text)`
-	max-height: 85%;
-	font-size: 18px;
-	overflow-y: hidden;
-	img {
-		padding-right: 20px;
-		width: 90%;
-		height: auto;
+	overflow: hidden;
+	overflow-y: auto;
+	padding-left: 10px;
+
+	p {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 `;
 const Wording = styled(Text)`
-	font-size: 16px;
-	color: #5f6b72;
-	font-weight: 700;
-	/* background-color: #ff88005c; */
+	color: #8999a2;
+	width: 100%;
+	height: 18%;
+	font-weight: 600;
+	padding-left: 10px;
+	overflow: hidden;
+	line-height: 19px;
 `;
-const SolutionContainer = styled.div`
-	background-color: #00ff2a;
-	height: 30vh;
-	margin-top: 10px;
+const SolutionArea = styled.div`
+	width: 100%;
+	height: 45%;
+	min-height: 200px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
