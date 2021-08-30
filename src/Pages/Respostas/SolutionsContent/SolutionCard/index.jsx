@@ -80,7 +80,8 @@ const HeaderTitle = styled(Title)`
 const QuestionArea = styled.div`
 	margin-top: 2.5%;
 	width: 100%;
-	height: 48%;
+	flex-grow: 1;
+	max-height: 48%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -110,8 +111,6 @@ const Wording = styled(Text)`
 `;
 const SolutionArea = styled.div`
 	background-color: ${({ theme }) => theme.secondaryColor};
-	position: absolute;
-	bottom: 0;
 	width: 100%;
 	height: 45%;
 	min-height: 200px;
