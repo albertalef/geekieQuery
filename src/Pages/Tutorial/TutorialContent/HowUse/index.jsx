@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import React from 'react';
 import Title from '../../../../Components/Title';
 import Text from '../../../../Components/Text';
-import { Link, List } from './style';
+import { /* Link, */ List } from './style';
 
 export default function TutorialSteps() {
 	return (
