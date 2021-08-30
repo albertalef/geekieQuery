@@ -11,7 +11,7 @@ const SkipButton = styled.button`
 	min-width: 140px;
 	border: 0;
 
-	background: #35a1ee3d;
+	background: #cee8fb;
 
 	box-shadow: 0px 0px 20px rgba(53, 160, 238, 0.25);
 	border-radius: 4px;
@@ -28,8 +28,16 @@ const SkipButton = styled.button`
 
 	transition: 0.3s;
 	&:hover {
-		background: #35a1ee6a;
+		background: #b4d3e9;
 		color: #2181c5;
+	}
+
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		min-width: unset;
+		padding: 10px 25px;
+		height: 100%;
 	}
 `;
 

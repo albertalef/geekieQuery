@@ -11,6 +11,20 @@ export const List = styled.ul`
 	}
 	p {
 		margin-bottom: 20px;
+		strong {
+			font-weight: 600;
+		}
+	}
+
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		padding: 10px 0;
+		p {
+			padding: 0 10px;
+		}
+		border-top: 1px solid ${({ theme }) => theme.mobile.header.bottomColor};
+		border-bottom: 1px solid ${({ theme }) => theme.mobile.header.bottomColor};
 	}
 `;
 export const Link = styled.a`

@@ -20,8 +20,11 @@ export default function SolutionsContent() {
 	return (
 		<ContentTemplate>
 			<Wrapper>
-				<Previous onClick={previousQuestion} active={hasQuestions}>
-					<i class="fas fa-chevron-left"></i>
+				<Previous
+					onClick={previousQuestion}
+					active={hasQuestions ? question !== 0 : false}
+				>
+					<i className="fas fa-chevron-left"></i>
 				</Previous>
 				{response ? (
 					<SolutionCard data={response.questions[question]} index={question} />
@@ -41,8 +44,13 @@ export default function SolutionsContent() {
 						index={'Exemplo '}
 					/>
 				)}
-				<Next onClick={nextQuestion} active={hasQuestions}>
-					<i class="fas fa-chevron-right"></i>
+				<Next
+					onClick={nextQuestion}
+					active={
+						hasQuestions ? question !== response.questions.length - 1 : false
+					}
+				>
+					<i className="fas fa-chevron-right"></i>
 				</Next>
 			</Wrapper>
 		</ContentTemplate>
@@ -80,12 +88,12 @@ const Previous = styled.button`
 	}
 
 	left: -100px;
-	background-image: linear-gradient(to right, rgba(51, 85, 170, 0), #35a1ee24);
+	background-image: linear-gradient(to right, rgba(51, 85, 170, 0), #75b4e01f);
 `;
 const Next = styled(Previous)`
 	left: unset;
 	padding-right: unset;
 
 	right: -100px;
-	background-image: linear-gradient(to left, rgba(51, 85, 170, 0), #35a1ee24);
+	background-image: linear-gradient(to left, rgba(51, 85, 170, 0), #75b4e01f);
 `;

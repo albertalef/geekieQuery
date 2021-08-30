@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import React, { useContext } from 'react';
 import { FooterTemplate } from '../../../Layout';
 import { Link } from 'react-router-dom';
@@ -18,17 +17,8 @@ export default function TutorialFooter({ routeId }) {
 			<Link to={nextPage}>
 				<NextButton>
 					<p>Proximo Passo</p>
-					<i class="fas fa-long-arrow-alt-right"></i>
 				</NextButton>
 			</Link>
 		</FooterTemplate>
 	);
 }
-export const ButtonGroupWrapper = styled.div`
-	width: 80%;
-	max-width: 1000px;
-	height: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-`;

@@ -10,26 +10,29 @@ export default function TutorialSteps() {
 			<Title>Como funciona</Title>
 			<List>
 				<Text>
-					Passo 1 - Pegue o link da atividade e coloque no campo acima.
+					<strong>Passo 1</strong> - Pegue o link da atividade e coloque no
+					campo acima.
 				</Text>
 				<Text>
-					Passo 2 - Copie o resultado do link clicando no icone de copiar.
+					<strong>Passo 2</strong> - Copie o resultado do link clicando no icone
+					de copiar.
 				</Text>
 				<Text>
-					Passo 3 - Entre no link copiado, e copie todo o codigo do site, usando
-					CTRL + A, e CTRL + C (Caso esteja no celular, copie qualquer parte do
-					site, depois clique em Selecionar Tudo e Copiar!).
+					<strong>Passo 3</strong> - Entre no link copiado, e copie todo o
+					codigo do site, usando CTRL + A, e CTRL + C (Caso esteja no celular,
+					copie qualquer parte do site, depois clique em Selecionar Tudo e
+					Copiar!).
 				</Text>
 				<Text>
-					Passo 4 - Na aba “Codigo fonte” (Deste site), cole todo o código na
-					área de texto. Pronto! Você terá as respostas clicando em “Coletar
-					Respostas”.
+					<strong>Passo 4</strong> - Na aba “Codigo fonte” (Deste site), cole
+					todo o código na área de texto. Pronto! Você terá as respostas
+					clicando em “Coletar Respostas”.
 				</Text>
 			</List>
 
 			<Link href="https://www.youtube.com/watch?v=CC8pt2KcaLw" target="_blank">
 				<p>Tutorial com vídeo</p>
-				<i class="fas fa-long-arrow-alt-right"></i>
+				<i className="fas fa-long-arrow-alt-right"></i>
 			</Link>
 		</TutorialStepsWrapper>
 	);
@@ -43,5 +46,13 @@ export const TutorialStepsWrapper = styled.ul`
 	flex-direction: column;
 	h1 {
 		font-size: 20px;
+	}
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		flex-grow: 1;
+		p {
+			line-height: 20px;
+		}
 	}
 `;

@@ -17,7 +17,7 @@ export default function CopyButton({ text, focused, onCopy }) {
 				}}
 				focused={focused}
 			>
-				<i class="far fa-copy"></i>
+				<i className="far fa-copy"></i>
 			</Button>
 		</CopyToClipboard>
 	);

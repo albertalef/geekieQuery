@@ -6,7 +6,9 @@ export default function HeaderTemplate({ routeId }) {
 	const routes = useContext(RouteContext);
 	return (
 		<HeaderWrapper>
-			<StepSide />
+			<StepSide>
+				<MobileContainer></MobileContainer>
+			</StepSide>
 			<ContentSide>
 				<Container>
 					<Step>
@@ -27,6 +29,13 @@ const HeaderWrapper = styled.div`
 	left: 0;
 	font-family: ${({ theme }) => theme.title.fontFamily};
 	display: flex;
+
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		height: ${({ theme }) => theme.variables.mobile.header.height};
+		background-color: red;
+	}
 `;
 const Step = styled.h1`
 	font-family: Montserrat;
@@ -52,12 +61,35 @@ const StepSide = styled.div`
 	width: ${({ theme }) => theme.variables.stepSide.width};
 	max-width: ${({ theme }) => theme.variables.stepSide.maxWidth};
 	height: 100%;
-	/* background-color: blue; */
+
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		width: 100%;
+		background-color: #fff;
+		border-bottom: 1px solid ${({ theme }) => theme.mobile.header.bottomColor};
+		max-width: unset;
+	}
 `;
+const MobileContainer = styled.div`
+	display: none;
+
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		display: none;
+	}
+`;
+
 const ContentSide = styled.div`
 	width: calc(100% - ${({ theme }) => theme.variables.stepSide.width});
 	height: 100%;
-	/* background-color: red; */
 	display: flex;
 	justify-content: center;
+
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		display: none;
+	}
 `;

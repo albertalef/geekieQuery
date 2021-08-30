@@ -7,12 +7,23 @@ const ValuesContext = createContext();
 export function ValuesProvider({ children }) {
 	const [linkValue, setLinkValue] = useState('');
 	const [sourceCodeValue, setSourceCodeValue] = useState('');
-	const [response, setResponse] = useState();
+	const [response, setResponse] = useState(getLocalResponses('localResponse'));
 	const getResponsesHandler = (e) => {
 		let newResponse = getResponses(sourceCodeValue, e);
 		setResponse(newResponse);
+		setLocalResponses(newResponse);
+		document.title = newResponse.name;
 		/* setSourceCodeValue(''); */
 	};
+	function setLocalResponses(response) {
+		const responseInString = JSON.stringify(response);
+		localStorage.setItem('localResponse', responseInString);
+	}
+	function getLocalResponses(key) {
+		const responseInString = localStorage.getItem(key);
+		const response = JSON.parse(responseInString);
+		return response;
+	}
 	return (
 		<ValuesContext.Provider
 			value={{

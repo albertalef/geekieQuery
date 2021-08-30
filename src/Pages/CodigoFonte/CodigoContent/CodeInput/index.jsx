@@ -1,16 +1,34 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { useValues } from '../../../../Hooks/useValues';
 
 export default function CodeInput() {
+	const [focused, setFocused] = useState(false);
+	const inputRef = useRef(null);
+	function inputHandleOnFocus(e) {
+		setFocused(true);
+	}
+	function inputHandleOnBlur(e) {
+		setFocused(false);
+	}
+
 	const { sourceCode } = useValues();
 	const { sourceCodeValue, setSourceCodeValue } = sourceCode;
 	return (
-		<TextFieldContainer>
+		<TextFieldContainer
+			focused={focused}
+			onClick={(e) => {
+				e.preventDefault();
+				inputRef.current.focus();
+			}}
+		>
 			<TextArea
 				onChange={(e) => {
 					setSourceCodeValue(e.target.value);
 				}}
+				ref={inputRef}
+				onFocus={inputHandleOnFocus}
+				onBlur={inputHandleOnBlur}
 				value={sourceCodeValue}
 				name="code"
 			></TextArea>

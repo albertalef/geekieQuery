@@ -8,11 +8,11 @@ export default function Solution({ isCorrect, text }) {
 		<Wrapper isCorrect={isCorrect}>
 			{isCorrect ? (
 				<CheckIcon>
-					<i class="fas fa-check-circle"></i>
+					<i className="fas fa-check-circle"></i>
 				</CheckIcon>
 			) : (
 				<WhrongIcon>
-					<i class="fas fa-times-circle"></i>
+					<i className="fas fa-times-circle"></i>
 				</WhrongIcon>
 			)}
 
@@ -25,12 +25,12 @@ const Wrapper = styled.div`
 	height: 20%;
 	width: 100%;
 	background-color: ${({ isCorrect }) =>
-		isCorrect ? '#71d87139' : '#e7555513'};
+		isCorrect ? '#3c9de724' : '#cacaca11'};
 	margin: 2px;
 	overflow: hidden;
 	display: flex;
 	align-items: center;
-	border: 2px solid rgba(60, 157, 231, 0.068);
+	border: 2px solid #3c9de711;
 	border-radius: 5px;
 	justify-content: flex-start;
 	:hover {
@@ -42,6 +42,12 @@ const SolutionText = styled(Text)`
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	:first-letter {
+		text-transform: uppercase;
+	}
+	*:first-letter {
+		text-transform: uppercase;
+	}
 `;
 
 const CheckIcon = styled.div`
@@ -51,7 +57,7 @@ const CheckIcon = styled.div`
 	i {
 		font-size: 22px;
 		padding: 0 11px;
-		color: #71d871;
+		color: #3c9de7ab;
 	}
 `;
 const WhrongIcon = styled.div`
@@ -61,6 +67,6 @@ const WhrongIcon = styled.div`
 	i {
 		font-size: 22px;
 		padding: 0 11px;
-		color: #e75555;
+		color: #5a5a5a58;
 	}
 `;

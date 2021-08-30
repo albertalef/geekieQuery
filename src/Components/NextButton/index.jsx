@@ -30,6 +30,14 @@ const NextButton = styled.button`
 	&:hover {
 		background: #2387cf;
 	}
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		min-width: unset;
+		padding: 10px 25px;
+		height: 100%;
+		width: unset;
+	}
 `;
 
 export default NextButton;

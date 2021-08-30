@@ -2,21 +2,23 @@ import React from 'react';
 import './reset.css';
 import styled, { ThemeProvider } from 'styled-components';
 import Tutorial from './Pages/Tutorial';
-import lightTheme from './Theme';
+import lightTheme from './Theme/theme';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { RouteContext } from './Context/RouteContext';
 import CodigoFonte from './Pages/CodigoFonte';
 import Respostas from './Pages/Respostas';
 import { ValuesProvider } from './Hooks/useValues';
+import useWindowDimensions from './Hooks/useWindowDimensions';
 
 function App() {
+	const { height } = useWindowDimensions();
 	const routes = [
 		{ name: 'Tutorial', path: '/', home: true },
 		{ name: 'Codigo Fonte', path: '/codigofonte' },
 		{ name: 'Respostas', path: '/respostas' },
 	];
 	return (
-		<Wrapper>
+		<Wrapper windowHeight={height}>
 			<ThemeProvider theme={lightTheme}>
 				<RouteContext.Provider value={routes}>
 					<ValuesProvider>
@@ -45,6 +47,16 @@ const Wrapper = styled.div`
 	display: flex;
 	a {
 		text-decoration: none;
+	}
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	@media (max-width: 1000px) {
+		/* -------------------------------------- */
+		display: none;
+		/* -------------------------------------- */
+		height: 100vh;
+		height: ${({ windowHeight }) => windowHeight}px;
+		min-height: 560px;
 	}
 `;
 

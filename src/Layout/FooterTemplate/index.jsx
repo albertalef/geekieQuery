@@ -14,18 +14,30 @@ export default function FooterTemplate({ children }) {
 
 const FooterWrapper = styled.div`
 	position: fixed;
-	bottom: 10px;
+	bottom: ${({ theme }) => theme.variables.footer.bottom};
 	width: 100vw;
-	height: 60px;
+	height: ${({ theme }) => theme.variables.footer.height};
 	/* background-color: #00ff2a4e; */
 	z-index: 2;
 	display: flex;
+
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		height: ${({ theme }) => theme.variables.mobile.footer.height};
+		bottom: ${({ theme }) => theme.variables.mobile.footer.bottom};
+	}
 `;
 const StepSide = styled.div`
 	width: ${({ theme }) => theme.variables.stepSide.width};
 	max-width: ${({ theme }) => theme.variables.stepSide.maxWidth};
 	height: 100%;
-	/* background-color: blue; */
+
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		display: none;
+	}
 `;
 const ContentSide = styled.div`
 	width: calc(100% - ${({ theme }) => theme.variables.stepSide.width});
@@ -33,13 +45,17 @@ const ContentSide = styled.div`
 	/* background-color: red; */
 	display: flex;
 	justify-content: center;
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		width: 100%;
+	}
 `;
 
 const Container = styled.div`
 	width: ${({ theme }) => theme.variables.context.width};
 	max-width: ${({ theme }) => theme.variables.context.maxWidth};
 	height: 100%;
-	/* background-color: blue; */
 	display: flex;
 	justify-content: space-between;
 	align-items: center;

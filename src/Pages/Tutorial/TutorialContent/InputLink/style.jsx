@@ -7,6 +7,10 @@ export const InputLinkWrapper = styled.div`
 
 	display: flex;
 	align-items: center;
+	/* ------------------!!Media-Mobile!!--------------------- */
+	${({ theme }) => theme.variables.mobile.media} {
+		padding: 10px 0;
+	}
 `;
 export const TextFieldContainer = styled.div`
 	width: 100%;

@@ -8,6 +8,12 @@ export const StepsWrapper = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		display: none;
+	}
 `;
 
 export const StepsContainer = styled.div`
