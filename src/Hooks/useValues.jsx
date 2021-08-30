@@ -9,10 +9,13 @@ export function ValuesProvider({ children }) {
 	const [sourceCodeValue, setSourceCodeValue] = useState('');
 	const [response, setResponse] = useState(getLocalResponses('localResponse'));
 	const getResponsesHandler = (e) => {
-		let newResponse = getResponses(sourceCodeValue, e);
-		setResponse(newResponse);
-		setLocalResponses(newResponse);
-		document.title = newResponse.name;
+		try {
+			let newResponse = getResponses(sourceCodeValue, e);
+			setResponse(newResponse);
+			setLocalResponses(newResponse);
+			document.title = newResponse.name;
+		} catch (err) {}
+
 		/* setSourceCodeValue(''); */
 	};
 	function setLocalResponses(response) {
@@ -20,9 +23,13 @@ export function ValuesProvider({ children }) {
 		localStorage.setItem('localResponse', responseInString);
 	}
 	function getLocalResponses(key) {
-		const responseInString = localStorage.getItem(key);
-		const response = JSON.parse(responseInString);
-		return response;
+		try {
+			const responseInString = localStorage.getItem(key);
+			const response = JSON.parse(responseInString);
+			return response;
+		} catch (err) {
+			return {};
+		}
 	}
 	return (
 		<ValuesContext.Provider
