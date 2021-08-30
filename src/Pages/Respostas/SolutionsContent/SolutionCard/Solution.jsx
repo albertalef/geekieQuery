@@ -42,6 +42,7 @@ const SolutionText = styled(Text)`
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	font-size: 1em;
 	:first-letter {
 		text-transform: uppercase;
 	}
@@ -55,7 +56,7 @@ const CheckIcon = styled.div`
 	align-items: center;
 	justify-content: center;
 	i {
-		font-size: 22px;
+		font-size: 1.4em;
 		padding: 0 11px;
 		color: #3c9de7ab;
 	}
@@ -65,7 +66,7 @@ const WhrongIcon = styled.div`
 	align-items: center;
 	justify-content: center;
 	i {
-		font-size: 22px;
+		font-size: 1.4em;
 		padding: 0 11px;
 		color: #5a5a5a58;
 	}

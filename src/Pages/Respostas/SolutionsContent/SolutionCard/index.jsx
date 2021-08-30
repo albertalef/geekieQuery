@@ -49,11 +49,13 @@ const Wrapper = styled.div`
 		-khtml-user-select: none;
 		-ms-user-select: none;
 	}
+	@media (max-height: 580px) {
+		font-size: 0.8em;
+	}
 `;
 
 const Container = styled.div`
 	/* background-color: red; */
-	position: relative;
 	width: 90%;
 	height: 85%;
 	display: flex;
@@ -80,8 +82,7 @@ const HeaderTitle = styled(Title)`
 const QuestionArea = styled.div`
 	margin-top: 2.5%;
 	width: 100%;
-	flex-grow: 1;
-	max-height: 48%;
+	height: 48%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -93,6 +94,7 @@ const Question = styled(Text)`
 	overflow: hidden;
 	overflow-y: auto;
 	padding-left: 10px;
+	font-size: 1em;
 
 	p {
 		display: flex;
@@ -108,12 +110,11 @@ const Wording = styled(Text)`
 	padding-left: 10px;
 	overflow: hidden;
 	line-height: 19px;
+	font-size: 1em;
 `;
 const SolutionArea = styled.div`
-	background-color: ${({ theme }) => theme.secondaryColor};
 	width: 100%;
 	height: 45%;
-	min-height: 200px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;

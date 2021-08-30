@@ -6,11 +6,12 @@ export const List = styled.ul`
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
+	overflow-y: auto;
 	@media (max-width: 1220px) {
 		overflow-y: scroll;
 	}
 	p {
-		margin-bottom: 20px;
+		margin-bottom: 10px;
 		strong {
 			font-weight: 600;
 		}
