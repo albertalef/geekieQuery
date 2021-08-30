@@ -7,9 +7,7 @@ const ValuesContext = createContext();
 export function ValuesProvider({ children }) {
 	const [linkValue, setLinkValue] = useState('');
 	const [sourceCodeValue, setSourceCodeValue] = useState('');
-	const [response, setResponse] = useState(
-		getLocalResponses('localResponse') || {}
-	);
+	const [response, setResponse] = useState(getLocalResponses('localResponse'));
 	const getResponsesHandler = (e) => {
 		try {
 			let newResponse = getResponses(sourceCodeValue, e);
@@ -30,7 +28,7 @@ export function ValuesProvider({ children }) {
 			const response = JSON.parse(responseInString);
 			return response;
 		} catch (err) {
-			return {};
+			return undefined;
 		}
 	}
 	return (
