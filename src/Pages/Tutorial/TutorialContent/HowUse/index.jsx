@@ -26,7 +26,7 @@ export default function TutorialSteps() {
 				<Text>
 					<strong>Passo 4</strong> - Na aba “Codigo fonte” (Deste site), cole
 					todo o código na área de texto. Pronto! Você terá as respostas
-					clicando em “Coletar Respostas”.
+					clicando em "Ver Respostas”.
 				</Text>
 			</List>
 
