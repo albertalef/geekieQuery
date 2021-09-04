@@ -17,10 +17,17 @@ export function ValuesProvider({ children }) {
 			let newResponse = getResponses(sourceCodeValue, e);
 			setResponse(newResponse);
 			setLocalResponses(newResponse);
-			ReactGA.event({ category: 'Responses', action: 'Queried a Response' });
+			ReactGA.event({
+				category: 'Responses',
+				action: 'Success when querying a Response',
+			});
 			document.title = newResponse.name;
 		} catch (err) {
 			setResponse(responseExample);
+			ReactGA.event({
+				category: 'Responses',
+				action: 'Fail when querying a Response',
+			});
 		} finally {
 			setSourceCodeValue('');
 		}
