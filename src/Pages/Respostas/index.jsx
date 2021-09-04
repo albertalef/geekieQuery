@@ -1,14 +1,14 @@
 import React from 'react';
-import { StepsTemplate, FooterTemplate } from '../../Layout';
+import { StepsTemplate, HeaderTemplate } from '../../Layout';
 import SolutionsContent from './SolutionsContent';
 import styled from 'styled-components';
 
 export default function Respostas({ routeId }) {
 	return (
 		<Wrapper>
+			<HeaderTemplate routeId={routeId} />
 			<StepsTemplate routeId={routeId} />
 			<SolutionsContent routeId={routeId} />
-			<FooterTemplate routeId={routeId} />
 		</Wrapper>
 	);
 }
