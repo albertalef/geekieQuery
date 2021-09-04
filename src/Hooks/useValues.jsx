@@ -19,10 +19,10 @@ export function ValuesProvider({ children }) {
 				throw error;
 			}
 
-			alert('passou');
 			ReactGA.event({
 				category: 'Responses',
-				action: 'Success when querying a Response',
+				action: 'Querying a Response',
+				label: 'Success',
 			});
 			setResponse(newResponse);
 			setLocalResponses(newResponse);
@@ -31,7 +31,8 @@ export function ValuesProvider({ children }) {
 			setResponse(responseExample);
 			ReactGA.event({
 				category: 'Responses',
-				action: 'Fail when querying a Response',
+				action: 'Querying a Response',
+				label: 'Fail',
 			});
 		} finally {
 			setSourceCodeValue('');
