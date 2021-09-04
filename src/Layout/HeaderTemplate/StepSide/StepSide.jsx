@@ -3,12 +3,13 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import useMenu from '../../../Hooks/useMenu';
 
-export default function StepSide() {
+export default function StepSide({ routeId }) {
+	const isHome = routeId === 0;
 	const { menuStatus, toggleMenu } = useMenu();
 	return (
 		<Wrapper>
 			<MobileContainer>
-				<HomeButton as={Link} to="/">
+				<HomeButton as={Link} to="/" isHome={isHome}>
 					<i className="fas fa-home"></i>
 				</HomeButton>
 				<MenuButton onClick={toggleMenu} menuStatus={menuStatus}>
@@ -63,6 +64,7 @@ const MenuButton = styled.button`
 `;
 const HomeButton = styled.button`
 	display: flex;
+	visibility: ${({ isHome }) => (isHome ? 'hidden' : 'visible')};
 	height: 100%;
 	width: calc(${({ theme }) => theme.variables.mobile.header.height} + 3%);
 	border: 0;
@@ -70,7 +72,7 @@ const HomeButton = styled.button`
 	justify-content: center;
 	align-items: center;
 	i {
-		font-size: 1.5em;
+		font-size: 1.4em;
 		color: ${({ theme }) => theme.title.color};
 	}
 `;

@@ -8,7 +8,7 @@ export default function HeaderTemplate({ routeId }) {
 	const routes = useContext(RouteContext);
 	return (
 		<HeaderWrapper>
-			<StepSide />
+			<StepSide routeId={routeId} />
 			<ContentSide routeId={routeId} routes={routes} />
 		</HeaderWrapper>
 	);
