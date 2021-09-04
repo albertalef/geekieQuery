@@ -22,4 +22,15 @@ export const WelcomeWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		margin-top: 5px;
+		height: 22%;
+		min-height: 110px;
+		p {
+			line-height: 20px;
+		}
+	}
 `;
