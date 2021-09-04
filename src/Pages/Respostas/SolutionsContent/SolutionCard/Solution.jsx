@@ -36,6 +36,12 @@ const Wrapper = styled.div`
 	:hover {
 		transform: scale(1.005);
 	}
+
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		margin: 2px 0px;
+	}
 `;
 
 const SolutionText = styled(Text)`
@@ -49,6 +55,11 @@ const SolutionText = styled(Text)`
 	*:first-letter {
 		text-transform: uppercase;
 	}
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		font-size: 0.9em;
+	}
 `;
 
 const CheckIcon = styled.div`
@@ -60,14 +71,29 @@ const CheckIcon = styled.div`
 		padding: 0 11px;
 		color: #3c9de7ab;
 	}
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		i {
+			font-size: 1.1em;
+		}
+	}
 `;
 const WhrongIcon = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	i {
-		font-size: 1.4em;
+		font-size: 1.41em;
 		padding: 0 11px;
 		color: #5a5a5a58;
+	}
+
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		i {
+			font-size: 1.1em;
+		}
 	}
 `;
