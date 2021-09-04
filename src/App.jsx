@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './reset.css';
 import styled from 'styled-components';
 import Tutorial from './Pages/Tutorial';
@@ -8,7 +8,7 @@ import CodigoFonte from './Pages/CodigoFonte';
 import Respostas from './Pages/Respostas';
 import useWindowDimensions from './Hooks/useWindowDimensions';
 import ContextWrapper from './Context/ContextWrapper';
-
+import ReactGa from 'react-ga';
 function App() {
 	const { height } = useWindowDimensions();
 	const routes = [
@@ -16,6 +16,10 @@ function App() {
 		{ name: 'Codigo Fonte', path: '/codigofonte' },
 		{ name: 'Respostas', path: '/respostas' },
 	];
+	useEffect(() => {
+		ReactGa.initialize('G-LE19VEPFMT');
+		ReactGa.pageview('/');
+	}, []);
 	return (
 		<Wrapper windowHeight={height}>
 			<ContextWrapper theme={lightTheme} routes={routes}>
