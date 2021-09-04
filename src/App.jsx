@@ -3,12 +3,13 @@ import './reset.css';
 import styled from 'styled-components';
 import Tutorial from './Pages/Tutorial';
 import lightTheme from './Theme/theme';
-import { BrowserRouter as Router, Route, withRouter } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import CodigoFonte from './Pages/CodigoFonte';
 import Respostas from './Pages/Respostas';
 import useWindowDimensions from './Hooks/useWindowDimensions';
 import ContextWrapper from './Context/ContextWrapper';
 import ReactGA from 'react-ga';
+
 ReactGA.initialize('UA-206710136-1');
 
 function App() {
@@ -24,17 +25,15 @@ function App() {
 	return (
 		<Wrapper windowHeight={height}>
 			<ContextWrapper theme={lightTheme} routes={routes}>
-				<Router>
-					<Route exact path="/">
-						<Tutorial routeId={0} />
-					</Route>
-					<Route path="/codigofonte">
-						<CodigoFonte routeId={1} />
-					</Route>
-					<Route path="/respostas">
-						<Respostas routeId={2} />
-					</Route>
-				</Router>
+				<Route exact path="/">
+					<Tutorial routeId={0} />
+				</Route>
+				<Route path="/codigofonte">
+					<CodigoFonte routeId={1} />
+				</Route>
+				<Route path="/respostas">
+					<Respostas routeId={2} />
+				</Route>
 			</ContextWrapper>
 		</Wrapper>
 	);
