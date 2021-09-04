@@ -20,24 +20,11 @@ export default function SolutionsContent() {
 				<Previous onClick={previousQuestion} active={hasPreviousQuestion()}>
 					<i className="fas fa-chevron-left"></i>
 				</Previous>
-				{response ? (
-					<SolutionCard data={response.questions[question]} index={question} />
-				) : (
-					<SolutionCard
-						data={{
-							content: 'Aqui ficará o conteúdo da pergunta',
-							wording: 'Aqui ficará a pergunta principal',
-							choices: [
-								{ content: 'Exemplo de resposta incorreta' },
-								{ content: 'Exemplo de resposta correta', isCorrect: true },
-								{ content: 'Exemplo de resposta incorreta' },
-								{ content: 'Exemplo de resposta incorreta' },
-								{ content: 'Exemplo de resposta incorreta' },
-							],
-						}}
-						index={'Exemplo '}
-					/>
-				)}
+				<SolutionCard
+					data={response.questions[question]}
+					example={response.example}
+					index={question}
+				/>
 				<Next onClick={nextQuestion} active={hasNextQuestion()}>
 					<i className="fas fa-chevron-right"></i>
 				</Next>
