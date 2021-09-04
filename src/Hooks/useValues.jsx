@@ -18,6 +18,7 @@ export function ValuesProvider({ children }) {
 			setLocalResponses(newResponse);
 			document.title = newResponse.name;
 		} catch (err) {
+			setResponse(responseExample);
 		} finally {
 			setSourceCodeValue('');
 		}
@@ -30,7 +31,6 @@ export function ValuesProvider({ children }) {
 		try {
 			const responseInString = localStorage.getItem(key);
 			const response = JSON.parse(responseInString);
-			console.log(response);
 			return response;
 		} catch (err) {
 			return undefined;
