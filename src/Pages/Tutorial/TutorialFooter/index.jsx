@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { RouteContext } from '../../../Context/RouteContext';
 import SkipButton from '../../../Components/SkipButton';
 import NextButton from '../../../Components/NextButton';
+import styled from 'styled-components';
 
 export default function TutorialFooter({ routeId }) {
 	const routes = useContext(RouteContext);
@@ -12,7 +13,7 @@ export default function TutorialFooter({ routeId }) {
 	return (
 		<FooterTemplate>
 			<Link to={lastPage}>
-				<SkipButton>Pular</SkipButton>
+				<SkipButtonMod>Pular</SkipButtonMod>
 			</Link>
 			<Link to={nextPage}>
 				<NextButton>
@@ -22,3 +23,6 @@ export default function TutorialFooter({ routeId }) {
 		</FooterTemplate>
 	);
 }
+const SkipButtonMod = styled(SkipButton)`
+	background-color: transparent;
+`;
