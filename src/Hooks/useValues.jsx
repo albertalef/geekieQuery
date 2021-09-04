@@ -2,6 +2,7 @@ import { createContext, useContext, useState } from 'react';
 import React from 'react';
 import getResponses from '../Services/getResponses/getResponses';
 import { responseExample } from '../Utils/example';
+import ReactGA from 'react-ga';
 
 const ValuesContext = createContext();
 
@@ -16,6 +17,7 @@ export function ValuesProvider({ children }) {
 			let newResponse = getResponses(sourceCodeValue, e);
 			setResponse(newResponse);
 			setLocalResponses(newResponse);
+			ReactGA.event({ category: 'Responses', action: 'Queried a Response' });
 			document.title = newResponse.name;
 		} catch (err) {
 			setResponse(responseExample);
