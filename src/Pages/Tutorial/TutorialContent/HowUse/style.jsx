@@ -21,6 +21,7 @@ export const List = styled.ul`
 
 	${({ theme }) => theme.variables.mobile.media} {
 		padding: 10px 0;
+
 		p {
 			padding: 0 10px;
 		}

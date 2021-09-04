@@ -9,7 +9,8 @@ export const InputLinkWrapper = styled.div`
 	align-items: center;
 	/* ------------------!!Media-Mobile!!--------------------- */
 	${({ theme }) => theme.variables.mobile.media} {
-		padding: 10px 0;
+		margin-top: 10px;
+		height: 10%;
 	}
 `;
 export const TextFieldContainer = styled.div`
