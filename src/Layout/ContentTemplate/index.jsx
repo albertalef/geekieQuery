@@ -43,5 +43,8 @@ const Container = styled.div`
 				${({ theme }) => theme.variables.mobile.footer.bottom}
 		);
 		margin-top: ${({ theme }) => theme.variables.mobile.header.height};
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
 	}
 `;
