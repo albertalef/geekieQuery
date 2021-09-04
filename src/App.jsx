@@ -54,9 +54,11 @@ const Wrapper = styled.div`
 		/* -------------------------------------- */
 		display: none;
 		/* -------------------------------------- */
+		position: relative;
 		height: 100vh;
 		height: ${({ windowHeight }) => windowHeight}px;
 		min-height: 560px;
+		/* 	background-color: red; */
 	}
 `;
 
