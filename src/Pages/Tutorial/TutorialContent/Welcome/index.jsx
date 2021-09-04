@@ -26,7 +26,7 @@ export const WelcomeWrapper = styled.div`
 	/* ------------------!!Media-Mobile!!--------------------- */
 
 	${({ theme }) => theme.variables.mobile.media} {
-		margin-top: 25px;
+		margin-top: 5px;
 		height: 22%;
 		min-height: 110px;
 		p {
