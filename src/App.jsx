@@ -9,7 +9,7 @@ import Respostas from './Pages/Respostas';
 import useWindowDimensions from './Hooks/useWindowDimensions';
 import ContextWrapper from './Context/ContextWrapper';
 import ReactGA from 'react-ga';
-ReactGA.initialize('G-SE4SRND56F');
+ReactGA.initialize('UA-206710136-1');
 
 function App() {
 	const { height } = useWindowDimensions();
