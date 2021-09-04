@@ -20,7 +20,7 @@ export function clearQuestions(questions) {
 		});
 		return cleanedQuestions;
 	} catch (err) {
-		throw err;
+		throw new Error('Isso não é uma atividade válida!');
 	}
 }
 

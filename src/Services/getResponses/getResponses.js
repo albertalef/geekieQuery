@@ -14,6 +14,7 @@ function getResponses(data, e) {
 		e.preventDefault();
 		e.stopPropagation();
 		console.log(err);
+		alert(err);
 	}
 }
 

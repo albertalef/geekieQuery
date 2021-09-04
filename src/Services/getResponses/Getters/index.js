@@ -8,8 +8,7 @@ export function getMainScript(DOM) {
 		console.log(
 			`\n\nNão consegui achar o Script State-Data! (Código Fonte inválido!)\n\n`
 		);
-		alert('Código Fonte inválido!');
-		throw err;
+		throw new Error('Código Fonte inválido!');
 	}
 }
 
@@ -20,9 +19,8 @@ export function getActivity(string) {
 		const activityTrated = removeDataImg(activity);
 		return activityTrated;
 	} catch (err) {
-		console.log('\n\nIsso não é um código fonte de uma atividade!!\n\n');
-		alert('Isso não é um código fonte de uma atividade!!');
-		throw err;
+		console.log('\n\nNão consegui achar o objeto Activity!!\n\n');
+		throw new Error('Isso não é um código fonte de uma atividade!!');
 	}
 }
 export function getName(activity) {
