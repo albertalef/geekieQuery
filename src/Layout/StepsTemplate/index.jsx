@@ -3,14 +3,23 @@ import React, { useContext /* , { useState } */ } from 'react';
 import StepIcon from './StepIcon.jsx';
 import { Link } from 'react-router-dom';
 import { RouteContext } from '../../Context/RouteContext/index.jsx';
+import useMenu from '../../Hooks/useMenu.jsx';
+
 export default function StepsTemplate({ routeId }) {
+	const { menuStatus, toggleMenu } = useMenu();
 	const routes = useContext(RouteContext);
 	return (
-		<StepsWrapper>
+		<StepsWrapper active={menuStatus}>
 			<StepsContainer>
 				{routes.map((route, index) => {
 					return (
-						<Link to={route.path} key={index}>
+						<Link
+							to={route.path}
+							key={index}
+							onClick={() => {
+								setTimeout(toggleMenu, 50);
+							}}
+						>
 							<Step>
 								<StepIcon
 									active={routeId === index ? true : false}
