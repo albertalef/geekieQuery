@@ -11,9 +11,9 @@ const SkipButton = styled.button`
 	min-width: 140px;
 	border: 0;
 
-	background: #cee8fb;
+	background: #cbe7fd;
 
-	box-shadow: 0px 0px 20px rgba(53, 160, 238, 0.25);
+	/* box-shadow: 0px 0px 20px rgba(53, 160, 238, 0.25); */
 	border-radius: 4px;
 	font-family: Montserrat;
 	font-style: normal;
