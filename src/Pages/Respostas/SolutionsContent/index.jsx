@@ -1,29 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ContentTemplate } from '../../../Layout';
 import styled from 'styled-components';
 import SolutionCard from './SolutionCard';
 import { useValues } from '../../../Hooks/useValues';
+import useQuestion from './useQuestion';
 
 export default function SolutionsContent() {
 	const { response } = useValues();
-	const [question, setQuestion] = useState(0);
-	function previousQuestion(e) {
-		if (question > 0) {
-			setQuestion(question - 1);
-		}
-	}
-	function nextQuestion(e) {
-		if (question < (response ? response.questions.length - 1 : 0))
-			setQuestion(question + 1);
-	}
-	const hasQuestions = response ? true : false;
+
+	const {
+		question,
+		functions: { previousQuestion, nextQuestion },
+		booleans: { hasPreviousQuestion, hasNextQuestion },
+	} = useQuestion(response);
+
 	return (
 		<ContentTemplate>
 			<Wrapper>
-				<Previous
-					onClick={previousQuestion}
-					active={hasQuestions ? question !== 0 : false}
-				>
+				<Previous onClick={previousQuestion} active={hasPreviousQuestion()}>
 					<i className="fas fa-chevron-left"></i>
 				</Previous>
 				{response ? (
@@ -44,12 +38,7 @@ export default function SolutionsContent() {
 						index={'Exemplo '}
 					/>
 				)}
-				<Next
-					onClick={nextQuestion}
-					active={
-						hasQuestions ? question !== response.questions.length - 1 : false
-					}
-				>
+				<Next onClick={nextQuestion} active={hasNextQuestion()}>
 					<i className="fas fa-chevron-right"></i>
 				</Next>
 			</Wrapper>
