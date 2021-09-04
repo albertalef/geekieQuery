@@ -23,18 +23,17 @@ export function ValuesProvider({ children }) {
 		getLocalResponses('localResponse') || responseExample
 	);
 	const getResponsesHandler = (e) => {
-		try {
-			let [newResponse, error] = getResponses(sourceCodeValue, e);
-			if (error) throw error;
-			ReactGA.event(successGAEvent);
-			setResponse(newResponse);
-			setLocalResponses(newResponse);
-			document.title = newResponse.name;
-		} catch (err) {
-			ReactGA.event(failGAEvent);
-		} finally {
-			setSourceCodeValue('');
-		}
+		getResponses(sourceCodeValue, e)
+			.then((newResponse) => {
+				ReactGA.event(successGAEvent);
+				setResponse(newResponse);
+				setLocalResponses(newResponse);
+				document.title = newResponse.name;
+			})
+			.catch((err) => {
+				ReactGA.event(failGAEvent);
+			});
+		setSourceCodeValue('');
 	};
 	function setLocalResponses(response) {
 		const responseInString = JSON.stringify(response);
