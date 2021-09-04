@@ -4,12 +4,14 @@ import Text from '../../../../Components/Text';
 import Title from '../../../../Components/Title';
 import Solution from './Solution';
 
-export default function SolutionCard({ data, index }) {
+export default function SolutionCard({ data, index, example }) {
 	const { content, choices, wording } = data;
 	return (
 		<Wrapper>
 			<Header>
-				<HeaderTitle>Questão {index + 1}</HeaderTitle>
+				<HeaderTitle>
+					{example ? 'Exemplo' : 'Questão'} {index + 1}
+				</HeaderTitle>
 			</Header>
 			<Container>
 				<QuestionArea>
