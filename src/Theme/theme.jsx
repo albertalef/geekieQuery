@@ -15,7 +15,7 @@ const variables = {
 		maxWidth: '1000px',
 	},
 	mobile: {
-		media: '@media(max-width: 1000px)',
+		media: '@media(max-width: 1080px)',
 		header: {
 			height: '50px',
 		},
