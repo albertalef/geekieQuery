@@ -52,6 +52,12 @@ const Wrapper = styled.div`
 	@media (max-height: 580px) {
 		font-size: 0.8em;
 	}
+
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		box-shadow: none;
+	}
 `;
 
 const Container = styled.div`
@@ -61,6 +67,13 @@ const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		height: 100%;
+		width: 100%;
+	}
 `;
 
 const Header = styled.div`
@@ -73,10 +86,23 @@ const Header = styled.div`
 	border-bottom: 2px solid
 		${({ theme }) => theme.solutionCard.header.bottomColor};
 	border-radius: 6px 6px 0 0;
+
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		height: 10%;
+		border-width: 1px;
+	}
 `;
 const HeaderTitle = styled(Title)`
 	font-family: ${({ theme }) => theme.text.fontFamily};
 	font-weight: 700;
+
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		font-size: 1.5em;
+	}
 `;
 
 const QuestionArea = styled.div`
@@ -93,13 +119,20 @@ const Question = styled(Text)`
 	height: 80%;
 	overflow: hidden;
 	overflow-y: auto;
-	padding-left: 10px;
+	padding: 0px 10px;
 	font-size: 1em;
 
 	p {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+	}
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		img {
+			width: 100%;
+		}
 	}
 `;
 const Wording = styled(Text)`
