@@ -17,7 +17,7 @@ export default function CodigoFooter({ routeId }) {
 		<FooterTemplate>
 			<Link to={previousPage}>
 				<Previous>
-					<i class="fas fa-long-arrow-alt-left"></i>
+					<i className="fas fa-long-arrow-alt-left"></i>
 					<p>Anterior</p>
 				</Previous>
 			</Link>
@@ -28,7 +28,7 @@ export default function CodigoFooter({ routeId }) {
 					}}
 				>
 					<p>Ver Respostas</p>
-					<i class="fas fa-check"></i>
+					<i className="fas fa-check"></i>
 				</NextUpdated>
 			</Link>
 		</FooterTemplate>
