@@ -1,13 +1,16 @@
 import { createContext, useContext, useState } from 'react';
 import React from 'react';
 import getResponses from '../Services/getResponses/getResponses';
+import { responseExample } from '../Utils/example';
 
 const ValuesContext = createContext();
 
 export function ValuesProvider({ children }) {
 	const [linkValue, setLinkValue] = useState('');
 	const [sourceCodeValue, setSourceCodeValue] = useState('');
-	const [response, setResponse] = useState(getLocalResponses('localResponse'));
+	const [response, setResponse] = useState(
+		getLocalResponses('localResponse') || responseExample
+	);
 	const getResponsesHandler = (e) => {
 		try {
 			let newResponse = getResponses(sourceCodeValue, e);
@@ -27,6 +30,7 @@ export function ValuesProvider({ children }) {
 		try {
 			const responseInString = localStorage.getItem(key);
 			const response = JSON.parse(responseInString);
+			console.log(response);
 			return response;
 		} catch (err) {
 			return undefined;
