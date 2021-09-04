@@ -3,7 +3,7 @@ import './reset.css';
 import styled from 'styled-components';
 import Tutorial from './Pages/Tutorial';
 import lightTheme from './Theme/theme';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, withRouter } from 'react-router-dom';
 import CodigoFonte from './Pages/CodigoFonte';
 import Respostas from './Pages/Respostas';
 import useWindowDimensions from './Hooks/useWindowDimensions';
@@ -20,7 +20,7 @@ function App() {
 	];
 	useEffect(() => {
 		ReactGA.pageview(window.location.pathname + window.location.search);
-	}, []);
+	});
 	return (
 		<Wrapper windowHeight={height}>
 			<ContextWrapper theme={lightTheme} routes={routes}>
@@ -63,4 +63,4 @@ const Wrapper = styled.div`
 	}
 `;
 
-export default App;
+export default withRouter(App);
