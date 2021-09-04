@@ -43,13 +43,6 @@ const Wrapper = styled.div`
 	a {
 		text-decoration: none;
 	}
-	* {
-		user-select: none;
-		-webkit-user-select: none;
-		-moz-user-select: none;
-		-khtml-user-select: none;
-		-ms-user-select: none;
-	}
 	/* ------------------!!Media-Mobile!!--------------------- */
 
 	@media (max-width: 1000px) {
