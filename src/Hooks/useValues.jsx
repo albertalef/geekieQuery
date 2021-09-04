@@ -14,9 +14,10 @@ export function ValuesProvider({ children }) {
 			setResponse(newResponse);
 			setLocalResponses(newResponse);
 			document.title = newResponse.name;
-		} catch (err) {}
-
-		/* setSourceCodeValue(''); */
+		} catch (err) {
+		} finally {
+			setSourceCodeValue('');
+		}
 	};
 	function setLocalResponses(response) {
 		const responseInString = JSON.stringify(response);
