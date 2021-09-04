@@ -34,6 +34,9 @@ export default function InputLink() {
 				focused={focused}
 				onMouseDown={(e) => {
 					e.preventDefault();
+					if (e.target.nodeName === 'BUTTON' || e.target.nodeName === 'I') {
+						return;
+					}
 					inputRef.current.focus();
 				}}
 			>
