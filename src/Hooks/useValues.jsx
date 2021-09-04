@@ -5,6 +5,16 @@ import { responseExample } from '../Utils/example';
 import ReactGA from 'react-ga';
 
 const ValuesContext = createContext();
+const successGAEvent = {
+	category: 'Responses',
+	action: 'Querying a Response',
+	label: 'Success',
+};
+const failGAEvent = {
+	category: 'Responses',
+	action: 'Querying a Response',
+	label: 'Fail',
+};
 
 export function ValuesProvider({ children }) {
 	const [linkValue, setLinkValue] = useState('');
@@ -15,25 +25,14 @@ export function ValuesProvider({ children }) {
 	const getResponsesHandler = (e) => {
 		try {
 			let [newResponse, error] = getResponses(sourceCodeValue, e);
-			if (error) {
-				throw error;
-			}
-
-			ReactGA.event({
-				category: 'Responses',
-				action: 'Querying a Response',
-				label: 'Success',
-			});
+			if (error) throw error;
+			alert('oi');
+			ReactGA.event(successGAEvent);
 			setResponse(newResponse);
 			setLocalResponses(newResponse);
 			document.title = newResponse.name;
 		} catch (err) {
-			setResponse(responseExample);
-			ReactGA.event({
-				category: 'Responses',
-				action: 'Querying a Response',
-				label: 'Fail',
-			});
+			ReactGA.event(failGAEvent);
 		} finally {
 			setSourceCodeValue('');
 		}

@@ -13,7 +13,7 @@ function getResponses(data, e) {
 	} catch (err) {
 		e.preventDefault();
 		e.stopPropagation();
-		alert(err);
+		alert(err.message);
 		return [null, err];
 	}
 }
