@@ -78,6 +78,30 @@ const Previous = styled.button`
 
 	left: -100px;
 	background-image: linear-gradient(to right, rgba(51, 85, 170, 0), #75b4e01f);
+
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		width: 100px;
+		height: 45px;
+		position: fixed;
+		left: unset;
+		top: unset;
+		right: unset;
+		left: 0;
+		bottom: ${({ theme }) => theme.variables.mobile.footer.bottom};
+		opacity: 0.5;
+		background-image: unset;
+		padding: 0;
+		:hover {
+			cursor: unset;
+			opacity: 0.5;
+			i {
+				transform: unset;
+				opacity: unset;
+			}
+		}
+	}
 `;
 const Next = styled(Previous)`
 	left: unset;
@@ -85,4 +109,16 @@ const Next = styled(Previous)`
 
 	right: -100px;
 	background-image: linear-gradient(to left, rgba(51, 85, 170, 0), #75b4e01f);
+
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		width: 100px;
+		height: 45px;
+		position: fixed;
+		left: unset;
+		top: unset;
+		right: 0;
+		background-image: unset;
+	}
 `;
