@@ -24,6 +24,8 @@ const FooterWrapper = styled.div`
 	/* ------------------!!Media-Mobile!!--------------------- */
 
 	${({ theme }) => theme.variables.mobile.media} {
+		position: relative;
+		transform: translateY(-100%);
 		height: ${({ theme }) => theme.variables.mobile.footer.height};
 		bottom: ${({ theme }) => theme.variables.mobile.footer.bottom};
 	}

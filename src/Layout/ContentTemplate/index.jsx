@@ -36,7 +36,6 @@ const Container = styled.div`
 	max-width: ${({ theme }) => theme.variables.context.maxWidth};
 
 	/* ------------------!!Media-Mobile!!--------------------- */
-
 	${({ theme }) => theme.variables.mobile.media} {
 		height: calc(
 			100% - ${({ theme }) => theme.variables.mobile.header.height} -
