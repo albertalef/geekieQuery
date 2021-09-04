@@ -27,7 +27,7 @@ export default function CodigoFooter({ routeId }) {
 						getResponsesHandler(e);
 					}}
 				>
-					<p>Ir para as Respostas</p>
+					<p>Ver Respostas</p>
 					<i class="fas fa-check"></i>
 				</NextUpdated>
 			</Link>
@@ -37,14 +37,36 @@ export default function CodigoFooter({ routeId }) {
 const NextUpdated = styled(NextButton)`
 	width: 200px;
 	height: 45px;
+
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		width: initial;
+		height: initial;
+		min-width: unset;
+		padding: 10px 27px;
+		height: 100%;
+		width: unset;
+		i {
+			display: none;
+		}
+	}
 `;
 
 const Previous = styled(SkipButton)`
 	width: 200px;
 	height: 45px;
 	box-shadow: none;
-	background-color: #35a1ee28;
-	:hover {
-		background-color: #2d8dd137;
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		width: initial;
+		height: initial;
+		min-width: unset;
+		padding: 10px 15px;
+		height: 100%;
+		i {
+			display: none;
+		}
 	}
 `;
