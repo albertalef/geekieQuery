@@ -1,10 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import useMenu from '../../../Hooks/useMenu';
 
 export default function StepSide() {
+	const { menuStatus, toggleMenu } = useMenu();
 	return (
 		<Wrapper>
-			<MobileContainer />
+			<MobileContainer>
+				<HomeButton as={Link} to="/">
+					<i className="fas fa-home"></i>
+				</HomeButton>
+				<MenuButton onClick={toggleMenu} menuStatus={menuStatus}>
+					<i className="fas fa-bars"></i>
+				</MenuButton>
+			</MobileContainer>
 		</Wrapper>
 	);
 }
@@ -29,6 +39,38 @@ const MobileContainer = styled.div`
 	/* ------------------!!Media-Mobile!!--------------------- */
 
 	${({ theme }) => theme.variables.mobile.media} {
-		display: none;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		height: 100%;
+	}
+`;
+const MenuButton = styled.button`
+	display: flex;
+	height: 100%;
+	width: calc(${({ theme }) => theme.variables.mobile.header.height} + 3%);
+	border: 0;
+	background-color: transparent;
+	justify-content: center;
+	align-items: center;
+	i {
+		font-size: 1.9em;
+		color: ${({ theme }) => theme.title.color};
+		::before {
+			content: ${({ menuStatus }) => (menuStatus ? "'\f00d'" : "'\f0c9'")};
+		}
+	}
+`;
+const HomeButton = styled.button`
+	display: flex;
+	height: 100%;
+	width: calc(${({ theme }) => theme.variables.mobile.header.height} + 3%);
+	border: 0;
+	background-color: transparent;
+	justify-content: center;
+	align-items: center;
+	i {
+		font-size: 1.5em;
+		color: ${({ theme }) => theme.title.color};
 	}
 `;
