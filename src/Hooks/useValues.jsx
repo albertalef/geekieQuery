@@ -26,7 +26,6 @@ export function ValuesProvider({ children }) {
 		try {
 			let [newResponse, error] = getResponses(sourceCodeValue, e);
 			if (error) throw error;
-			alert('oi');
 			ReactGA.event(successGAEvent);
 			setResponse(newResponse);
 			setLocalResponses(newResponse);
