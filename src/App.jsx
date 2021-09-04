@@ -8,7 +8,9 @@ import CodigoFonte from './Pages/CodigoFonte';
 import Respostas from './Pages/Respostas';
 import useWindowDimensions from './Hooks/useWindowDimensions';
 import ContextWrapper from './Context/ContextWrapper';
-import ReactGa from 'react-ga';
+import ReactGA from 'react-ga';
+ReactGA.initialize('G-LE19VEPFMT');
+
 function App() {
 	const { height } = useWindowDimensions();
 	const routes = [
@@ -17,8 +19,7 @@ function App() {
 		{ name: 'Respostas', path: '/respostas' },
 	];
 	useEffect(() => {
-		ReactGa.initialize('G-LE19VEPFMT');
-		ReactGa.pageview('/');
+		ReactGA.pageview(window.location.pathname + window.location.search);
 	}, []);
 	return (
 		<Wrapper windowHeight={height}>
