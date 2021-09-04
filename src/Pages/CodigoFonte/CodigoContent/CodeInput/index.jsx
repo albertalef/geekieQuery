@@ -62,6 +62,12 @@ export const TextFieldContainer = styled.div`
 	&:hover {
 		border-color: ${({ theme }) => theme.primaryColor};
 	}
+
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		margin: 13% 0px;
+	}
 `;
 const TextArea = styled.textarea`
 	color: #5b758a;
