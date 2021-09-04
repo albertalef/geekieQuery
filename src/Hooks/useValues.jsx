@@ -14,13 +14,18 @@ export function ValuesProvider({ children }) {
 	);
 	const getResponsesHandler = (e) => {
 		try {
-			let newResponse = getResponses(sourceCodeValue, e);
-			setResponse(newResponse);
-			setLocalResponses(newResponse);
+			let [newResponse, error] = getResponses(sourceCodeValue, e);
+			if (error) {
+				throw error;
+			}
+
+			alert('passou');
 			ReactGA.event({
 				category: 'Responses',
 				action: 'Success when querying a Response',
 			});
+			setResponse(newResponse);
+			setLocalResponses(newResponse);
 			document.title = newResponse.name;
 		} catch (err) {
 			setResponse(responseExample);

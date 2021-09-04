@@ -9,11 +9,12 @@ function getResponses(data, e) {
 		const name = getName(activity);
 		const questions = getQuestions(activity);
 		const cleanedQuestions = clearQuestions(questions);
-		return { name, questions: cleanedQuestions };
+		return [{ name, questions: cleanedQuestions }, null];
 	} catch (err) {
 		e.preventDefault();
 		e.stopPropagation();
 		alert(err);
+		return [null, err];
 	}
 }
 
