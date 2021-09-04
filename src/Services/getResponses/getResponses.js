@@ -13,7 +13,6 @@ function getResponses(data, e) {
 	} catch (err) {
 		e.preventDefault();
 		e.stopPropagation();
-		console.log(err);
 		alert(err);
 	}
 }
