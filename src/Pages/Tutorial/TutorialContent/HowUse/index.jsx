@@ -51,6 +51,7 @@ export const TutorialStepsWrapper = styled.ul`
 
 	${({ theme }) => theme.variables.mobile.media} {
 		flex-grow: 1;
+		margin-bottom: 10px;
 		p {
 			line-height: 20px;
 		}
