@@ -12,7 +12,15 @@ export const StepsWrapper = styled.div`
 	/* ------------------!!Media-Mobile!!--------------------- */
 
 	${({ theme }) => theme.variables.mobile.media} {
-		display: none;
+		transition: 0.5s;
+		position: fixed;
+		width: 100%;
+		max-width: unset;
+		height: 30vh;
+		z-index: 999;
+		top: ${({ active, theme }) =>
+			active ? theme.variables.mobile.header.height : '-100%'};
+		border-bottom: 3px solid #8ccdfc;
 	}
 `;
 
@@ -37,6 +45,14 @@ export const StepsContainer = styled.div`
 	}
 	a {
 		text-decoration: none;
+	}
+
+	/* ------------------!!Media-Mobile!!--------------------- */
+
+	${({ theme }) => theme.variables.mobile.media} {
+		max-width: unset;
+		height: 80%;
+		margin-bottom: 0px;
 	}
 `;
 
