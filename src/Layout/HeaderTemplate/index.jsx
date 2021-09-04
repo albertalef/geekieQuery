@@ -15,6 +15,7 @@ export default function HeaderTemplate({ routeId }) {
 }
 
 const HeaderWrapper = styled.div`
+	z-index: 1000;
 	width: 100%;
 	height: ${({ theme }) => theme.variables.header.height};
 	position: fixed;
