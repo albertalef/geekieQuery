@@ -22,7 +22,7 @@ export function ValuesProvider({ children }) {
 	const [response, setResponse] = useState(
 		getLocalResponses('localResponse') || responseExample
 	);
-	const getResponsesHandler = (e) => {
+	function getResponsesHandler(e) {
 		getResponses(sourceCodeValue, e)
 			.then((newResponse) => {
 				ReactGA.event(successGAEvent);
@@ -34,7 +34,7 @@ export function ValuesProvider({ children }) {
 				ReactGA.event(failGAEvent);
 			});
 		setSourceCodeValue('');
-	};
+	}
 	function setLocalResponses(response) {
 		const responseInString = JSON.stringify(response);
 		localStorage.setItem('localResponse', responseInString);
