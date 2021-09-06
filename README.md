@@ -22,7 +22,7 @@ O site foi desenvolvido Desktop First, porém, acabei me empolgando no desenvolv
 
 <h2> Aviso! ⚠️ </h2>
 
-<b>O desenvolvimento é apenas por estudo!</b>
+<b>O desenvolvimento é apenas por estudo!</b><br/>
 Nada no GeekieQuery está sendo monetizado. O desenvolvimento foi apenas para ganho de experiência!
 
 
