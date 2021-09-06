@@ -14,7 +14,11 @@ Fiz o upload do site, então você pode acessar ele diretamente pelo link abaixo
 
 O projeto do GeekieQuery tem como principal objetivo o ganho de experiência com o Framework ReactJs. Quando iniciei o desenvolvimento deste app, eu tinha apenas a intenção de melhorar minhas noções com ReactJs, e com o tempo fui adicionando novas funções no site. Eventualmente ele se tornou uma ferramenta de alguns estudantes da instituição de ensino qual frequento, que utilizam a ferramenta para analizar posteriormente os resultados das atividades e conseguir melhores resultados ao estudar.
 
-![calculo](https://github.com/albertalef/calculadora/blob/master/img/calculo.PNG?raw=true)
+<h2> Responsividade 📱 </h2>
+
+![mobile](https://github.com/albertalef/geekieQuery/blob/master/img/Responsivo.gif?raw=true)
+
+O site foi desenvolvido Desktop First, porém, acabei me empolgando no desenvolvimento responsivo, nisso, a parte mobile ficou um pouco mais acabada e bonita.
 
 <h2> Aviso! ⚠️ </h2>
 
