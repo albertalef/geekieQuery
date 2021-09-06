@@ -1,6 +1,6 @@
 <h1><b>GeekieQuery</b></h1>
 
-![principal](https://github.com/albertalef/calculadora/blob/master/img/principal.png?raw=true)
+![principal](https://github.com/albertalef/geekieQuery/blob/master/img/principal.PNG?raw=true)
 
 <h2> Resumo 📄 </h2>
 Um método de conseguir respostas da plataforma Geekie, com apenas 4 passos
@@ -16,9 +16,9 @@ O projeto do GeekieQuery tem como principal objetivo o ganho de experiência com
 
 <h2> Responsividade 📱 </h2>
 
-<img src="https://github.com/albertalef/geekieQuery/blob/master/img/responsivo.gif?raw=true" height="500">
-
 O site foi desenvolvido Desktop First, porém, acabei me empolgando no desenvolvimento responsivo, nisso, a parte mobile ficou um pouco mais acabada e bonita.
+
+<img src="https://github.com/albertalef/geekieQuery/blob/master/img/responsivo.gif?raw=true" height="500">
 
 <h2> Aviso! ⚠️ </h2>
 
