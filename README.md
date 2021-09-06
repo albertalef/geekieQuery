@@ -16,7 +16,7 @@ O projeto do GeekieQuery tem como principal objetivo o ganho de experiência com
 
 <h2> Responsividade 📱 </h2>
 
-<img src="https://github.com/albertalef/geekieQuery/blob/master/img/responsivo.gif?raw=true">
+<img src="https://github.com/albertalef/geekieQuery/blob/master/img/responsivo.gif?raw=true" height="300">
 
 O site foi desenvolvido Desktop First, porém, acabei me empolgando no desenvolvimento responsivo, nisso, a parte mobile ficou um pouco mais acabada e bonita.
 
