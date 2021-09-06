@@ -8,7 +8,7 @@ Um método de conseguir respostas da plataforma Geekie, com apenas 4 passos
 
 Fiz o upload do site, então você pode acessar ele diretamente pelo link abaixo!!
 
-[gotocalc.netlify.app](https://gotocalc.netlify.app/)
+[gotocalc.netlify.app](https://geekiequery.netlify.app/)
 
 <h2> Objetivo ✅ </h2>
 
