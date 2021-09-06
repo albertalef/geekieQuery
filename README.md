@@ -3,7 +3,7 @@
 ![principal](https://github.com/albertalef/geekieQuery/blob/master/img/principal.PNG?raw=true)
 
 <h2> Resumo 📄 </h2>
-Um método de conseguir respostas da plataforma Geekie, com apenas 4 passos
+Um método de conseguir respostas da plataforma Geekie, com apenas 4 passos.
 <h2> Como acessar ➡️</h2>
 
 Fiz o upload do site, então você pode acessar ele diretamente pelo link abaixo!!
